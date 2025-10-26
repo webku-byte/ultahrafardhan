@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Ulang Tahun Rafardhan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Racing+Sans+One&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="confetti"></canvas>
+  <div class="background"></div>
+
+  <div class="invitation-card fade-in">
+    <p class="greeting">🎉 Hai teman-teman! 🎈<br> Datang ya ke pesta ulang tahun <strong>Rafardhan</strong>!</p>
+
+    <div class="top-cars">
+      <img src="mqueen.png" alt="McQueen" class="car left">
+      <img src="king.png" alt="King" class="car right">
+    </div>
+
+    <div class="photo-frame">
+      <img src="foto-anak.jpeg" alt="Foto Anak">
+    </div>
+
+    <h2>Undangan Ulang Tahun</h2>
+    <h1>Rafardhan</h1>
+    <p class="subtitle">Ulang Tahun ke-2 🚗</p>
+
+    <div class="info-box">
+      <div class="info">
+        <p>Sabtu</p>
+        <h3>15</h3>
+        <p>Nov 2025</p>
+      </div>
+      <div class="info">
+        <p>Pukul</p>
+        <h3>18:10</h3>
+        <p>WIB</p>
+      </div>
+    </div>
+
+    <div class="location">
+      <p>📍 KFC Cideng</p>
+      <p>Jl. Tanah Abang II No.85, Petojo Sel</p>
+    </div>
+
+    <a href="https://maps.app.goo.gl/2Kb7sVE9GkK3zC5aA" target="_blank" class="maps-btn">Lihat di Google Maps</a>
+
+    <div class="flags">
+      <img src="benderakiri.png" class="flag flag-left" alt="Bendera kiri">
+      <img src="benderakanan.png" class="flag flag-right" alt="Bendera kanan">
+    </div>
+
+    <button class="music-btn" onclick="toggleMusic()">🎵</button>
+  </div>
+
+<audio id="bg-music" src="song.mp3" loop></audio>
+
+<script src="confetti.js"></script>
+<script>
+  const music = document.getElementById('bg-music');
+  let playing = false;
+
+  // Fungsi untuk toggle manual
+  function toggleMusic() {
+    if (playing) {
+      music.pause();
+    } else {
+      music.play();
+    }
+    playing = !playing;
+  }
+
+  // ✅ Jalankan musik saat interaksi pertama (klik / tap di mana saja)
+  document.body.addEventListener('click', () => {
+    if (!playing) {
+      music.play().catch(() => {});
+      playing = true;
+    }
+  }, { once: true });
+</script>
+
+</body>
+</html>
